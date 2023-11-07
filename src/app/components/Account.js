@@ -15,12 +15,12 @@ const Account = () => {
             >
                 <button
                     className='border border-slate-900 w-3/4 h-1/3 rounded bg-sky-700 text-base opacity-100 hover:opacity-50'>
-                    <Link href={'/account'}>Sign in</Link>
+                    <Link href={'/account/sign-in'}>Sign in</Link>
                 </button>
 
                 <button
                     className='border border-slate-900 w-3/4 h-1/3 rounded bg-sky-700 text-base opacity-100 hover:opacity-50'>
-                    <Link href={'/account'}>Sign up</Link>
+                    <Link href={'/account/sign-up'}>Sign up</Link>
                 </button>
             </form>
         </div>

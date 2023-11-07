@@ -4,9 +4,9 @@ import { BsFillGearFill, BsBellFill } from "react-icons/bs";
 
 const Notification = () => {
     return (
-        <div className='w-80 h-80 bg-sky-950 rounded'>
-            <form action="">
-                <div className='flex justify-between px-4 py-2 items-center text-xl text-white border-b border-white'>
+        <div>
+            <form action="" className='w-80 h-80 bg-sky-950 rounded'>
+                <div className='flex justify-between items-center px-4 py-2 items-center text-xl text-white border-b border-white'>
                     <h1>Notification</h1>
 
                     <Link href={'setting/notifications-setting'} className='opacity-100 hover:opacity-50'>
