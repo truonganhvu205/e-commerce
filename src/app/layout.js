@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
 
-        <main className='container min-w-screen min-h-screen py-4'>
+        <main className='container mx-auto min-w-screen min-h-screen p-8'>
           {children}
         </main>
       </body>
