@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header'
+import { AddtoCartProvider } from './components/AddtoCartProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,13 +14,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
+      <AddtoCartProvider>
+        <body className={inter.className}>
+          <Header />
 
-        <main className='container mx-auto min-w-screen min-h-screen p-8'>
-          {children}
-        </main>
-      </body>
+          <main className='container mx-auto min-w-screen min-h-screen p-8'>
+            {children}
+          </main>
+        </body>
+      </AddtoCartProvider>
     </html>
   )
 }

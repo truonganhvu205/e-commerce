@@ -1,18 +1,18 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext, createContext } from 'react'
 import Link from 'next/link';
 import { BsBellFill, BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
 import Notification from './Notification'
 import Account from './Account';
+import { ProductContext } from './AddtoCartProvider';
 
 const Header = () => {
     const [bell, setBell] = useState(false)
-    const [bellCount, setBellCount] = useState(0)
     const [account, setAccount] = useState(false)
-    const [accountCount, setAccountCount] = useState(0)
-    const [name, setName] = useState('...')
     const [query, setQuery] = useState('')
+
+    const { selectedProducts } = useContext(ProductContext)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -75,7 +75,7 @@ const Header = () => {
                                 <BsBellFill />
                             </button>
 
-                            <p className='text-sky-950 absolute top-0 right-1'>{bellCount}</p>
+                            <p className='text-sky-950 absolute top-0 right-1'>0</p>
                         </div>
 
                         <div
@@ -93,7 +93,7 @@ const Header = () => {
                         >
                             <BsFillPersonFill />
 
-                            <span className='text-base'>Hi, {name}</span>
+                            <span className='text-base'>Hi, ...</span>
                         </button>
 
                         <div
@@ -113,7 +113,7 @@ const Header = () => {
                             <BsFillCartFill />
                         </Link>
 
-                        <p className='text-sky-950 absolute top-0 right-1'>{accountCount}</p>
+                        <p className='text-sky-950 absolute top-0 right-1'>{selectedProducts.length}</p>
                     </div>
                 </div>
             </div>

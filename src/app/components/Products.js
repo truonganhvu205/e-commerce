@@ -1,14 +1,22 @@
-import React from 'react'
+'use client'
+
+import React, { useContext } from 'react'
 import { BsStarFill, BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
+import { ProductContext } from './AddtoCartProvider'
 
 const Products = ({ products }) => {
     const categories = []
+    const { setSelectedProducts } = useContext(ProductContext)
 
     { products.filter(product => categories.push(product.category)) }
 
     const uniqueCategories = [...new Set(categories)]
 
     const onSubmit = e => e.preventDefault()
+
+    const addProduct = () => {
+        setSelectedProducts(prev => [...prev, products.id])
+    }
 
     return (
         <div>
@@ -44,7 +52,14 @@ const Products = ({ products }) => {
                                                 </div>
 
                                                 <div className='flex justify-end m-4'>
-                                                    <button className='bg-sky-700 rounded text-white px-4 py-1 opacity-100 hover:opacity-50 transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                                                    <button
+                                                        className='bg-sky-700 rounded text-white px-4 py-1 
+                                                                    opacity-100 hover:opacity-50 
+                                                                    transition transform hover:-translate-y-1 
+                                                                    motion-reduce:transition-none 
+                                                                    motion-reduce:hover:transform-none'
+                                                        onClick={addProduct}
+                                                    >
                                                         <p className='flex justify-center items-center'>
                                                             <span className='mr-2'>Buy</span>
                                                             <BsFillCartFill />
