@@ -1,8 +1,15 @@
-import React from 'react'
+'use client'
+
+import React, { useContext } from 'react'
+import { ProductContext } from '../components/AddtoCartProvider'
 
 const page = () => {
+    const { selectedProducts } = useContext(ProductContext)
+
     return (
-        <div>page</div>
+        <div>
+            {selectedProducts.join(',')}
+        </div>
     )
 }
 
