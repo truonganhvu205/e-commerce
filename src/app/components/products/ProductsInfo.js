@@ -1,16 +1,10 @@
 'use client'
 
 import React, { useContext } from 'react'
+import Link from 'next/link';
 import { BsStarFill, BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
-import { ProductContext } from '../provider/AddtoCartProvider'
 
 const ProductsInfo = ({ product }) => {
-    const { setSelectedProducts } = useContext(ProductContext)
-
-    const addProduct = () => {
-        setSelectedProducts(prev => [...prev, product.id])
-    }
-
     return (
         <div>
             <div className='flex justify-center items-center mx-auto my-4 w-20 h-40 border-b'>
@@ -34,15 +28,17 @@ const ProductsInfo = ({ product }) => {
             </div>
 
             <div className='flex justify-end m-4'>
-                <button
-                    className='bg-sky-700 rounded text-white px-4 py-1 opacity-100 hover:opacity-50'
-                    onClick={addProduct}
-                >
-                    <p className='flex justify-center items-center'>
-                        <span className='mr-2'>Buy</span>
-                        <BsFillCartFill />
-                    </p>
-                </button>
+                <Link href={`/products/${product.title}`}>
+                    <button
+                        type='submit'
+                        className='bg-sky-700 rounded text-white px-4 py-1 opacity-100 hover:opacity-50'
+                    >
+                        <p className='flex justify-center items-center'>
+                            <span className='mr-2'>Buy</span>
+                            <BsFillCartFill />
+                        </p>
+                    </button>
+                </Link>
             </div>
         </div>
     )

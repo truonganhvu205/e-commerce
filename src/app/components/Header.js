@@ -2,21 +2,23 @@
 
 import React, { useState, useContext, useEffect } from 'react'
 import Link from 'next/link';
+import { useRouter } from "next/navigation";
 import { BsBellFill, BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
 import Notification from './Notification'
 import Account from './Account';
 import { ProductContext } from './provider/AddtoCartProvider';
 
 const Header = () => {
+    const router = useRouter()
     const [bell, setBell] = useState(false)
     const [account, setAccount] = useState(false)
-    const [query, setQuery] = useState('')
+    const [search, setSearch] = useState('')
 
     const { selectedProducts } = useContext(ProductContext)
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        setQuery('')
+        router.push("/search/" + search)
     }
 
     const handleBell = () => {
@@ -37,7 +39,7 @@ const Header = () => {
     return (
         <div>
             <div className='grid sm:grid-rows-1'>
-                <div className='flex items-center min-w-screen px-8 py-2 bg-sky-700 text-white'>
+                <div className='flex items-center min-w-screen px-8 pt-4 bg-sky-700 text-white'>
                     <Link
                         href={'/'}
                         className='text-4xl capitalize mx-4'
@@ -46,7 +48,6 @@ const Header = () => {
                         <h1>e-commerce</h1>
                     </Link>
 
-                    {/* SEARCH BOX */}
                     <form
                         action=""
                         className='mx-4 grow flex items-center'
@@ -57,10 +58,11 @@ const Header = () => {
                             type="text"
                             placeholder='Search...'
                             className='rounded-l border-l border-y border-slate-900 grow py-1 px-4 text-black'
-                            value={query}
-                            onChange={e => setQuery(e.target.value)}
+                            value={search}
+                            onChange={e => setSearch(e.target.value)}
                         />
                         <button
+                            type='submit'
                             className='bg-sky-950 rounded-r px-2 border-r border-y border-slate-900 py-1 px-4
                                     opacity-100 hover:opacity-80'
                         >
@@ -121,39 +123,33 @@ const Header = () => {
                     </div>
                 </div>
 
-
-                {/* FILTER BOX */}
                 <div className='flex justify-center items-center space-x-8 pb-2 bg-sky-700 text-white z-0'>
-                    <button
-                        className='capitalize opacity-50 hover:opacity-100'
-                        onClick={() => { }}
-                    >
-                        all
-                    </button>
-                    <button
-                        className='capitalize opacity-50 hover:opacity-100'
-                        onClick={() => { }}
-                    >
-                        men's clothing
-                    </button>
-                    <button
-                        className='capitalize opacity-50 hover:opacity-100'
-                        onClick={() => { }}
-                    >
-                        jewelery
-                    </button>
-                    <button
-                        className='capitalize opacity-50 hover:opacity-100'
-                        onClick={() => { }}
-                    >
-                        electronics
-                    </button>
-                    <button
-                        className='capitalize opacity-50 hover:opacity-100'
-                        onClick={() => { }}
-                    >
-                        women's clothing
-                    </button>
+                    <Link href={'/category/mens-clothing'}>
+                        <button className='capitalize opacity-50 hover:opacity-100'>
+                            men's clothing
+                        </button>
+                    </Link>
+
+                    <Link href={'/category/jewelery'}>
+                        <button className='capitalize opacity-50 hover:opacity-100'>
+                            jewelery
+                        </button>
+                    </Link>
+
+                    <Link href={'/category/electronics'}>
+                        <button
+                            className='capitalize opacity-50 hover:opacity-100'
+                            onClick={() => { }}
+                        >
+                            electronics
+                        </button>
+                    </Link>
+
+                    <Link href={'/category/womens-clothing'}>
+                        <button className='capitalize opacity-50 hover:opacity-100'>
+                            women's clothing
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

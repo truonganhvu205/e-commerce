@@ -1,32 +1,33 @@
 'use client'
 
 import React, { useContext, useEffect, useState } from 'react'
+import Loading from '@/app/loading'
 import { ProductContext } from '../components/provider/AddtoCartProvider'
 
 const page = () => {
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+
     const { selectedProducts } = useContext(ProductContext)
-    const [productsInfo, setProductsInfo] = useState([])
 
     useEffect(() => {
-        const uniqueIds = [...new Set(selectedProducts)]
+        fetch("https://fakestoreapi.com/products", {
+            next: {
+                revalidate: 60,
+            },
+        })
+            .then((res) => res.json())
+            .then((json) => setProducts(json));
 
-        fetch(`https://fakestoreapi.com/products/${uniqueIds.join(',')}`)
-            .then(res => res.json())
-            .then(json => setProductsInfo(json))
+        setLoading(false)
     }, [selectedProducts])
 
-    return (
-        <div>
-            {!productsInfo.length && (
-                <div className='text-xl font-bold'>Sorry, no products in your shopping cart.</div>
-            )}
+    if (loading) {
+        return <Loading />
+    }
 
-            {productsInfo.length && productsInfo.map(productInfo => (
-                <div key={productInfo.id}>
-                    {productInfo.title}
-                </div>
-            ))}
-        </div>
+    return (
+        <div></div>
     )
 }
 

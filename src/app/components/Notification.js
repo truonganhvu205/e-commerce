@@ -13,7 +13,7 @@ const Notification = () => {
                         <BsFillGearFill />
                     </Link>
                 </div>
-                <div className='my-12 flex flex-wrap justify-center items-center text-white opacity-50'>
+                <div className='m-8 flex flex-wrap justify-center items-center text-white opacity-50'>
                     <span className='my-4 text-6xl'>
                         <BsBellFill />
                     </span>
