@@ -13,11 +13,11 @@ const ProductsInfo = ({ product }) => {
 
     return (
         <div>
-            <div className='flex justify-center items-center mx-auto my-4 w-20 h-40 '>
+            <div className='flex justify-center items-center mx-auto my-4 w-20 h-40 border-b'>
                 <img src={product.image} alt="image" />
             </div>
 
-            <h1 className='font-bold text-md m-2'>{product.title}</h1>
+            <h1 className='font-bold text-md m-4 text-center w-fit h-32'>{product.title}</h1>
 
             <div className='flex justify-between items-center m-4'>
                 <p>$<span className='font-bold text-lg ml-2'>{product.price}</span></p>

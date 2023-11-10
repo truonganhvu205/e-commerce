@@ -19,7 +19,7 @@ const Products = ({ products }) => {
                             <div>
                                 <h2 className='text-2xl font-bold capitalize mb-4'>{uniqueCategory}</h2>
 
-                                <ul className='flex justify-evenly items-start overflow-x-auto space-x-8 mb-8'>
+                                <ul className='grid grid-cols-4 gap-4 overflow-x-auto mb-8'>
                                     {products.filter(productCategories => productCategories.category === uniqueCategory)
                                         .map(product => (
                                             <li key={product.id} className='w-64 h-auto border rounded'>
