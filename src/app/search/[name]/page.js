@@ -7,7 +7,6 @@ import ProductsInfo from '@/app/components/products/ProductsInfo'
 const page = ({ params: { name } }) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-    const productsTitle = []
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products", {
@@ -20,8 +19,6 @@ const page = ({ params: { name } }) => {
 
         setLoading(false)
     }, [])
-
-    { products.filter(product => productsTitle.push(product.title)) }
 
     if (loading) {
         return <Loading />
