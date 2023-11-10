@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useContext, useEffect, useState } from 'react'
-import { ProductContext } from '../components/AddtoCartProvider'
+import { ProductContext } from '../components/provider/AddtoCartProvider'
 
 const page = () => {
     const { selectedProducts } = useContext(ProductContext)

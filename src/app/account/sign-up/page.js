@@ -1,9 +1,14 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
+import Loading from '@/app/loading'
 
 const page = () => {
-    return (
-        <div>page</div>
-    )
+    const [loading, setLoading] = useState(true)
+
+    if (loading) {
+        return <Loading />
+    }
 }
 
 export default page

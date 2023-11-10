@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Loading from '../loading'
-import Products from './Products'
+import Products from './products/Products'
 
 const Main = () => {
     const [products, setProducts] = useState([])
@@ -25,7 +25,7 @@ const Main = () => {
     }
 
     return (
-        <div>
+        <div className='flex justify-center items-center flex-1'>
             <Products products={products} />
         </div>
     )

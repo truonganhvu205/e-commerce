@@ -2,7 +2,7 @@
 
 import React, { useContext } from 'react'
 import { BsStarFill, BsFillPersonFill, BsFillCartFill } from "react-icons/bs";
-import { ProductContext } from './AddtoCartProvider'
+import { ProductContext } from '../provider/AddtoCartProvider'
 
 const ProductsInfo = ({ product }) => {
     const { setSelectedProducts } = useContext(ProductContext)
@@ -35,11 +35,7 @@ const ProductsInfo = ({ product }) => {
 
             <div className='flex justify-end m-4'>
                 <button
-                    className='bg-sky-700 rounded text-white px-4 py-1 
-                                    opacity-100 hover:opacity-50 
-                                    transition transform hover:-translate-y-1 
-                                    motion-reduce:transition-none 
-                                    motion-reduce:hover:transform-none'
+                    className='bg-sky-700 rounded text-white px-4 py-1 opacity-100 hover:opacity-50'
                     onClick={addProduct}
                 >
                     <p className='flex justify-center items-center'>
