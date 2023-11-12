@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FakeStoreAPI
+https://github.com/keikaavousi/fake-store-api
 
-## Getting Started
-
-First, run the development server:
-
+# Create Next.js app
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app@latest
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+What is your project named? ... [ traversy-courses ]
+Would you like to use TypeScript? ... [ No ] / Yes
+Would you like to use ESLint? ... [ No ] / Yes
+Would you like to use Tailwind CSS? ... No / [ Yes ]
+Would you like to use `src/` directory? ... No / [ Yes ]
+Would you like to use App Router? (recommended) ... No / [ Yes ]
+Would you like to customize the default import alias (@/*)? ... [ No ] / Yes
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+cd traversy-courses
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Libraries
+## React Icons
+```bash
+npm install react-icons --save
+```
 
-## Learn More
+## use-local-storage-state
+```bash
+npm install use-local-storage-state
+```
 
-To learn more about Next.js, take a look at the following resources:
+# Getting Started
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<table align='center'>
+  <tr align='center'>
+    <td>Home</td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-1.png' />
+    </td>
+  </tr>
+</table>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<table align='center'>
+  <tr align='center'>
+    <td>Men's Clothing - filter</td>
+    <td>Jewelery - filter</td>
+    <td>Electronics - filter</td>
+    <td>Women's Clothing - filter</td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-2.png' />
+    </td>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-3.png' />
+    </td>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-4.png' />
+    </td>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-5.png' />
+    </td>
+  </tr>
+</table>
 
-## Deploy on Vercel
+<table align='center'>
+  <tr align='center'>
+    <td>Bell funciton</td>
+    <td>Account function</td>
+    <td>Search function</td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-6.png' />
+    </td>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-7.png' />
+    </td>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-8.png' />
+    </td>
+  </tr>
+</table>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<table align='center'>
+  <tr align='center'>
+    <td>Cart - no products</td>
+    <td>Cart - with products</td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-9.png' />
+    </td>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-10.png' />
+    </td>
+  </tr>
+</table>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<table align='center'>
+  <tr align='center'>
+    <td>Order successful</td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <img src='https://github.com/truonganhvu205/e-commerce/blob/main/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023/e-commerce-nextjs-react-tailwind-css-truong-anh-vu-11-11-2023-pic-11.png' />
+    </td>
+  </tr>
+</table>
