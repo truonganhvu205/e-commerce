@@ -34,13 +34,6 @@ const Main = () => {
         }
     }, [])
 
-    useEffect(() => {
-        setTimeout(() => {
-            router.push('/')
-            setSuccess(false)
-        }, 3000)
-    }, [])
-
     if (loading) {
         return <Loading />
     }
