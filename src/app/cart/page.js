@@ -126,7 +126,7 @@ const page = () => {
                     <form
                         action=''
                         onSubmit={handleSubmit}
-                        className='m-4 bg-sky-700 rounded'
+                        className='m-4 bg-sky-700 rounded h-max'
                     >
                         <div className='flex space-x-4 m-4'>
                             <input
@@ -212,7 +212,7 @@ const page = () => {
 
                             <div className='m-4 font-semibold text-white flex'>
                                 <h1 className='grow text-lg opacity-70'>Delivery</h1>
-                                <h3 className='text-md font-semibold'>$ {deliveryPrice}</h3>
+                                <h3 className='text-md font-semibold'>$ {deliveryPrice.toFixed(2)}</h3>
                             </div>
 
                             <div className='m-4 font-semibold text-white flex border-t pt-4'>
