@@ -1,6 +1,7 @@
 # FakeStoreAPI
 https://github.com/keikaavousi/fake-store-api
 
+# Clone project
 ```bash
 git init
 git clone https://github.com/truonganhvu205/e-commerce.git
